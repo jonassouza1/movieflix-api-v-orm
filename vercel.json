@@ -17,9 +17,9 @@
     }
   ],
   "functions": {
-    "api/**/*.js": {
+    "dist/src/server.js": {
       "includeFiles": [
-        "prisma/schema.prisma",
+        "dist/prisma/schema.prisma",
         "node_modules/.prisma/**/*"
       ]
     }

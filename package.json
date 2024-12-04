@@ -8,6 +8,7 @@
   },
   "scripts": {
     "postinstall": "prisma generate",
+    "prisma:copy": "mkdir -p dist/prisma && cp -r ./prisma/* ./dist/prisma/",
     "build": "tsc && cp ./swagger.json ./dist/",
     "start": "node dist/src/server.js",
     "dev": "npx tsx watch src/server.ts",
