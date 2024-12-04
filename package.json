@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
+    "build": "tsc && cp ./swagger.json ./dist/",
+    "start": "node dist/src/server.js",
     "dev": "npx tsx watch src/server.ts",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write ."
@@ -13,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.9.0",
+    "dotenv": "^16.4.7",
     "express": "^4.18.2",
     "swagger-ui-express": "^5.0.0"
   },

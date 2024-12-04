@@ -2,12 +2,22 @@ import express from "express";
 import { PrismaClient } from "@prisma/client";
 import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json";
+import * as path from "path";
+import * as dotenv from "dotenv";
 
-const port = 3000;
+
+const envPath = path.resolve(__dirname, "../.env");
+dotenv.config({ path: envPath });
+const port = process.env.PORT
 const app = express();
 const prisma = new PrismaClient();
 
+app.use(
+  "/docs/static",
+  express.static(path.dirname(require.resolve("swagger-ui-dist/index.html")))
+);
 app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 app.use(express.json());
 
 app.get("/movies", async (req, res) => {
