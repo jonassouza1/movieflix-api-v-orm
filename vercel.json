@@ -15,5 +15,13 @@
       "src": "/(.*)",
       "dest": "dist/src/server.js"
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*.js": {
+      "includeFiles": [
+        "prisma/schema.prisma",
+        "node_modules/.prisma/**/*"
+      ]
+    }
+  }
 }
