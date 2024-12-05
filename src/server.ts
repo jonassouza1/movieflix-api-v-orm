@@ -4,7 +4,6 @@ import swaggerUi from "swagger-ui-express";
 import swaggerDocument from "../swagger.json";
 import * as path from "path";
 import * as dotenv from "dotenv";
-//sssss
 
 const envPath = path.resolve(__dirname, "../.env");
 dotenv.config({ path: envPath });
